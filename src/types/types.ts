@@ -1,42 +1,45 @@
 export interface CharacterStore {
-    info: Info | null,
-    results: Character[],
-    leftResults: Character[],
-    rightResults: Character[],
-    fetchCharacters: (panelType: string, postPerPage: number) => void;
-    // fetchNext: (somthing: any) => void
-    // clear: () => void;
+  info: Info | null;
+  results: Character[];
+  leftResults: Character[];
+  rightResults: Character[];
+  leftCharacter: Character | null;
+  rightCharacter: Character | null;
+  episodes: Episode[];
+  fetchCharacters: (panelType: string, currentPage: number) => void;
+  selectCharacter: (panelType: string, character: Character) => void;
 }
 
 export interface Info {
-    count: number;
-    pages: number;
-    next:  string;
-    prev:  string;
+  count: number;
+  pages: number;
+  next: string;
+  prev: string;
 }
 
 export interface Character {
-    id?:       number;
-    name?:     string;
-    status?:   string;
-    species?:  string;
-    type?:     string;
-    gender?:   string;
-    origin?:   Location;
-    location?: Location;
-    image?:    string;
-    episode?:  string[];
-    url?:      string;
-    created?:  Date;
+  id: string;
+  name: string;
+  species: string;
+  status: string;
+  image: string;
+  episode: Episode[];
+}
+
+export interface Episode {
+  id: string;
+  name: string;
+  episode: string;
+  air_date: string;
 }
 
 export interface Location {
-    name: string;
-    url:  string;
+  name: string;
+  url: string;
 }
 
-export type panelType = 'leftPanel' | 'rightPanel'
+export type panelType = "leftPanel" | "rightPanel";
 
 export interface CharacterPanel {
-    panelType: panelType,
+  panelType: panelType;
 }
