@@ -1,17 +1,28 @@
 # Rick & Morty App
 
 
-## Objetivos
+## Objetivos 👀
 
-- Consumir la api de Rick and Morty.
+- Consumir la api de Rick and Morty (en este caso se implemneto GraphQL).
 - Obtener los personajes y listarlos, de forma paginada, en dos secciones.
 - Motrar en una "Card" el nombre, la especie y el status.
 - Renderizar debajo del listado, tres secciones las cuales buscan renderiza los espisodios de cada personaje y en la seccion del medio los episodios que comparten
 
-## Para levantar el proyecto
+La idea es poder agregar mas funcionalidades al proyecto, que no solo quede en la posibilidad de matchear personajes en base a los episodios en los que estan vinculados, sino que ademas se pueda buscar mediante una SearchBar, incorporar filtrados, agregar mas paginas para poder adentrarse mas en el personaje, las locaciones y las especies, e implementar nuevas soluciones. 🚀
 
- 1. Clonar el repositorio para tener una copia del mismo en sus cuentas
- @.
+## Para levantar el proyecto 📖
+
+ ### 1. Clonar 
+ 
+ El repositorio para tener una copia del mismo en sus cuentas.
+ 
+ ### 2. Ejecutar `npm install`
+ 
+ En la terminal abrir la carpeta donde clonaste el repo y ejecutar `npm install` para instalar las dependencias del proyecto.
+ 
+ ### 3. Ejecutar `npm star`
+ 
+ En la misma carpeta donde ejecutaste los instaladores, ejecutar `npm star` para levantar el proyecto.
 
 __IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
@@ -34,16 +45,5 @@ Versiones:
 - __zustand__: 4.3.2
 - __typescript__: 4.9.5
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
