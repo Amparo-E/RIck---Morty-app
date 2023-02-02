@@ -1,35 +1,38 @@
-# Getting Started with Create React App
+# Rick & Morty App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Objetivos
 
-In the project directory, you can run:
+- Consumir la api de Rick and Morty.
+- Obtener los personajes y listarlos, de forma paginada, en dos secciones.
+- Motrar en una "Card" el nombre, la especie y el status.
+- Renderizar debajo del listado, tres secciones las cuales buscan renderiza los espisodios de cada personaje y en la seccion del medio los episodios que comparten
 
-### `npm start`
+## Para levantar el proyecto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 1. Clonar el repositorio para tener una copia del mismo en sus cuentas
+ @.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+__IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
-### `npm test`
+Actualmente las versiónes necesarias son:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- __Node__: 16.18.1 o mayor
+- __NPM__: 8.19.2 o mayor
 
-### `npm run build`
+Para verificar que versión tienen instalada:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+node -v
+npm -v
+```
+Versiones:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
+- __react__: 18.2.0
+- __react-dom__: 18.2.0
+- __react-router-dom__: 6.8.0
+- __zustand__: 4.3.2
+- __typescript__: 4.9.5
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
