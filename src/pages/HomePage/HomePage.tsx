@@ -1,8 +1,7 @@
-import { Box, Grid, Container, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import CharactersPanel from "../../components/Characters/CharactersPanel";
 import EpisodePanel from "../../components/EpisodePanel/EpisodePanel";
 import useCharacterStore from "../../store/characterStore";
-import { url } from "inspector";
 import { style } from "./stylesHomePage";
 
 const HomePage = () => {
@@ -18,8 +17,8 @@ const HomePage = () => {
     <Box>
       <Box sx={style.landing_box}>
         <Box sx={style.info_box}>
-          <Typography variant="h1" fontWeight={700}>
-            Where find?
+          <Typography variant="h4" sx={style.title}>
+          Rick and Morty have been sending characters to different episodes through the portals, help us find them...
           </Typography>
           <a
             href="#characters"
@@ -29,9 +28,10 @@ const HomePage = () => {
               background: "#2f9331",
               padding: "7px",
               color: "#fff",
+              borderRadius: '6px',
             }}
           >
-            Go to compare
+            Get started 
           </a>
         </Box>
       </Box>

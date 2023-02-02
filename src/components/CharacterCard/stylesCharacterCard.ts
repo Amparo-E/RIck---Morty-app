@@ -18,21 +18,15 @@ export const style = {
     height: "10px",
     width: "10px",
     borderRadius: "50%",
+    alignSelf: 'start',
+    mr: '8px'
   },
   info_box: {
-    background: "#fff",
+    background: "#D0D6DB",
     pt: "2em",
     pb: "1em",
     mt: "2em",
     textAlign: "center",
     borderRadius: "10px",
   },
-  image: {
-    height: "auto",
-            width: "12em",
-            borderRadius: "50%",
-            position: "absolute",
-            left: "1em",
-            bottom: "5em",
-  }
 };

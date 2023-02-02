@@ -5,6 +5,7 @@ export const style = {
         width: "calc(90vw / 3)",
         overflow: 'auto',
         margin: '10px',
+        background: '#D0D6DB'
       },
   };
   

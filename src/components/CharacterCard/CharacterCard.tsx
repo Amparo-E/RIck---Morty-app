@@ -21,7 +21,7 @@ const CharacterCard: FC<CharacterCardProps> = ({
       <Box
         sx={{
           ...style.content_box,
-          border: selected ? "1px solid #2f9331" : "",
+          border: selected ? "2px solid #2f9331" : "",
         }}
         onClick={() => handleSelect(character)}
       >
@@ -40,17 +40,20 @@ const CharacterCard: FC<CharacterCardProps> = ({
           <Box
             sx={{
               ...style.status,
-              background: character.status === "Alive"
+              background:
+                character.status === "Alive"
                   ? "#8bcf21"
                   : character.status === "unknown"
                   ? "#fff874"
                   : "#e64358",
             }}
           ></Box>
-          <Typography>{character.status}</Typography>
+          <Typography color="#fff">{character.status}</Typography>
         </Box>
         <Box sx={style.info_box}>
-          <Typography variant="h5" noWrap>{character.name}</Typography>
+          <Typography variant="h5" noWrap>
+            {character.name}
+          </Typography>
           <Typography>{character.species}</Typography>
         </Box>
       </Box>

@@ -11,7 +11,7 @@ interface EpisodePanelProps {
 const EpisodePanel: FC<EpisodePanelProps> = ({ title, episodes }) => {
   return (
     <>
-      <Typography variant="h6">{title}</Typography>
+      <Typography variant="h6" color="#fff">{title}</Typography>
       <Paper elevation={4} sx={style.panel_box}>
         {episodes !== undefined && episodes.length ? (
           episodes.map((episode, index) => (

@@ -1,10 +1,12 @@
-import { Grid, Button, Typography, Paper } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 import { useEffect, FC, useState } from "react";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import useCharacterStore from "../../store/characterStore";
 import { Character, CharacterPanel } from "../../types/types";
 import { Box } from "@mui/system";
 import { style } from "./stylesCharactersPanel";
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const CharactersPanel: FC<CharacterPanel> = ({ panelType }) => {
   const panelResults = useCharacterStore((state) =>
@@ -27,8 +29,8 @@ const CharactersPanel: FC<CharacterPanel> = ({ panelType }) => {
   };
   return (
     <>
-      <Paper sx={style.panel_box}>
-        <Typography variant="h4">
+      <Box sx={style.panel_box}>
+        <Typography variant="h4" color="#fff">
           Character #{panelType === "leftPanel" ? "1" : "2"}
           {""}
           {selectedCharacter.name ? ` - ${selectedCharacter.name}` : ""}
@@ -46,14 +48,16 @@ const CharactersPanel: FC<CharacterPanel> = ({ panelType }) => {
         </Grid>
         <Box sx={style.content_buttons}>
           <Button
+            startIcon={<NavigateBeforeIcon/>}
             variant="contained"
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
             sx={style.button}
           >
-            Prev
+            Previous
           </Button>
           <Button
+            endIcon={<NavigateNextIcon/>}
             variant="contained"
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage * 6 >= count}
@@ -62,7 +66,7 @@ const CharactersPanel: FC<CharacterPanel> = ({ panelType }) => {
             Next
           </Button>
         </Box>
-      </Paper>
+      </Box>
     </>
   );
 };

@@ -2,30 +2,7 @@ import { create } from "zustand";
 import axios from "axios";
 import { CharacterStore } from "../types/types";
 import { Episode } from "../types/types";
-
-const apiEndpoint = "https://rickandmortyapi.com/graphql";
-const graphQlQuery = `
-   query($apiPage: Int) {
-      characters(page: $apiPage) {
-      info {
-         count
-      }
-      results {
-         id
-         name
-         species
-         status
-         image
-         episode {
-            id
-            name
-            episode
-            air_date
-         }  
-      }   
-      }
-   }
-`;
+import { apiEndpoint, graphQlQuery } from "../apiEndopint/apiEndpoint";
 
 const useCharacterStore = create<CharacterStore>()((set, get) => ({
   info: null,
