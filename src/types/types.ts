@@ -6,6 +6,7 @@ export interface CharacterStore {
   leftCharacter: Character | null;
   rightCharacter: Character | null;
   episodes: Episode[];
+  count: number,
   fetchCharacters: (panelType: string, currentPage: number) => void;
   selectCharacter: (panelType: string, character: Character) => void;
 }

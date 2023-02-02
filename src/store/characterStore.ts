@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 import { CharacterStore } from "../types/types";
+import { Episode } from "../types/types";
 
 const apiEndpoint = "https://rickandmortyapi.com/graphql";
 const graphQlQuery = `
@@ -34,11 +35,13 @@ const useCharacterStore = create<CharacterStore>()((set, get) => ({
   leftCharacter: null,
   rightCharacter: null,
   episodes: [],
+  count: 0,
   fetchCharacters: async (panelType, currentPage) => {
     const charactersPerApi = 20;
     const charactersPerPage = 6;
 
     let results = get().results;
+    let count = get().count;
 
     const currentCharacters = charactersPerPage * currentPage;
     const firstCharacters = currentCharacters - charactersPerPage;
@@ -58,6 +61,7 @@ const useCharacterStore = create<CharacterStore>()((set, get) => ({
       });
 
       results = [...results, ...data.data.characters.results];
+      count = data.data.characters.info.count
     }
 
     const sliceResult = results.slice(firstCharacters, currentCharacters);
@@ -67,12 +71,14 @@ const useCharacterStore = create<CharacterStore>()((set, get) => ({
         set({
           results,
           leftResults: [...sliceResult],
+          count
         });
         break;
       case "rightPanel":
         set({
           results,
           rightResults: [...sliceResult],
+          count
         });
         break;
     }
@@ -85,6 +91,17 @@ const useCharacterStore = create<CharacterStore>()((set, get) => ({
     const rightCharacter = get().rightCharacter;
 
     if (!leftCharacter || !rightCharacter) return;
+    
+    const left = new Set(leftCharacter.episode.map(episode => episode.id))
+    const right = new Set(rightCharacter.episode.map(episode => episode.id))
+
+    const intersection = [...left].filter(id => right.has(id))
+
+    const allEpisodes = [...leftCharacter.episode, ...rightCharacter.episode]
+    
+    set({
+      episodes: intersection.map(id => allEpisodes.find(a => a.id === id) as Episode)
+    })
   },
 }));
 
