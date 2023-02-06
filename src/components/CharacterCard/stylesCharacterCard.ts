@@ -4,6 +4,7 @@ export const style = {
     height: "11.25em",
     width: "11.25em",
     cursor: "pointer",
+    borderRadius: "0.6em",
   },
   content_img: {
     width: "100%",
@@ -35,6 +36,7 @@ export const style = {
     justifyContent: "center",
     textAlign: "center",
     opacity: "0",
+    borderRadius: "0.6em",
     "&: hover": {
       opacity: "1",
       transition: "opacity 0.3s ease",
