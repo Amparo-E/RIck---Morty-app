@@ -21,39 +21,28 @@ const CharacterCard: FC<CharacterCardProps> = ({
       <Box
         sx={{
           ...style.content_box,
-          border: selected ? "2px solid #2f9331" : "",
+          border: selected ? "3px solid #2f9331" : "",
         }}
         onClick={() => handleSelect(character)}
       >
-        <img
-          src={character.image}
-          style={{
-            height: "auto",
-            width: "12em",
-            borderRadius: "50%",
-            position: "absolute",
-            left: "1em",
-            bottom: "5em",
-          }}
-        />
-        <Box sx={style.status_box}>
-          <Box
-            sx={{
-              ...style.status,
-              background:
-                character.status === "Alive"
-                  ? "#8bcf21"
-                  : character.status === "unknown"
-                  ? "#fff874"
-                  : "#e64358",
-            }}
-          ></Box>
-          <Typography color="#fff">{character.status}</Typography>
-        </Box>
+        <img src={character.image} style={style.content_img} />
+
         <Box sx={style.info_box}>
-          <Typography variant="h5" noWrap>
-            {character.name}
-          </Typography>
+          <Box sx={style.status_box}>
+            <Box
+              sx={{
+                ...style.status,
+                background:
+                  character.status === "Alive"
+                    ? "#8bcf21"
+                    : character.status === "unknown"
+                    ? "#fff874"
+                    : "#e64358",
+              }}
+            ></Box>
+            <Typography>{character.status}</Typography>
+          </Box>
+          <Typography variant="h5">{character.name}</Typography>
           <Typography>{character.species}</Typography>
         </Box>
       </Box>

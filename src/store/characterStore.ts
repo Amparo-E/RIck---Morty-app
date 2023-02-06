@@ -15,16 +15,16 @@ const useCharacterStore = create<CharacterStore>()((set, get) => ({
   count: 0,
   fetchCharacters: async (panelType, currentPage) => {
     const charactersPerApi = 20;
-    const charactersPerPage = 6;
+    const charactersPerPage = 8;
 
     let results = get().results;
     let count = get().count;
 
-    const currentCharacters = charactersPerPage * currentPage;
-    const firstCharacters = currentCharacters - charactersPerPage;
+    const currentCharacters = charactersPerPage * currentPage ; //6 * 1 = 6, 6 * 2 = 12
+    const firstCharacters = currentCharacters - charactersPerPage;  // 6 - 6 = 0, 12 - 6 = 6
 
     if (results.length < currentCharacters) {
-      const currentPageApi = Math.ceil(currentCharacters / charactersPerApi);
+      const currentPageApi = Math.ceil(currentCharacters / charactersPerApi); //6 / 20 = 0.3
 
       const postData = {
         query: graphQlQuery,
