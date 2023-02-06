@@ -17,7 +17,7 @@ export const style = {
   },
   handle_panel: {
     minHeight: "100vh",
-    background: '#252525'
+    background: 'linear-gradient(30deg, #252525 72%, #396827)'
   },
   handle_episodes_panel: {
     justifyContent: "center",
